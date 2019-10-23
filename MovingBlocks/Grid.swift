@@ -7,6 +7,7 @@
 //
 import SpriteKit
 class Grid:SKSpriteNode {
+    
     var rows:Int!
     var cols:Int!
     var blockSize:CGFloat!
@@ -19,6 +20,8 @@ class Grid:SKSpriteNode {
         self.blockSize = blockSize
         self.rows = rows
         self.cols = cols
+        
+        self.isUserInteractionEnabled = true
     }
     
     class func gridTexture(blockSize:CGFloat,rows:Int,cols:Int) -> SKTexture? {
@@ -57,6 +60,78 @@ class Grid:SKSpriteNode {
         let offset = blockSize / 2.0 + 0.5
         let x = CGFloat(col) * blockSize - (blockSize * CGFloat(cols)) / 2.0 + offset
         let y = CGFloat(rows - row - 1) * blockSize - (blockSize * CGFloat(rows)) / 2.0 + offset
+        return CGPoint(x: x, y: y)
+    }
+    
+    func toRowCol(location:CGPoint) -> CGPoint {
+        let x = Int((location.x + (blockSize * CGFloat(cols)) / 2) / blockSize)
+        let y = rows - 1 - Int((location.y + (blockSize * CGFloat(rows)) / 2) / blockSize)
         return CGPoint(x:x, y:y)
-}
+    }
+    
+    func sceneTouched(touchLocation:CGPoint) {
+        let p = toRowCol(location:touchLocation)
+        //print ("x: \(p.x), y: \(p.y)")
+        
+        if let b = GameScene.block {
+            b.position = gridPosition(row: Int(p.y), col: Int(p.x))
+            checkWinCondition()
+        }
+    }
+    func checkWinCondition() {
+        var gameWon = true
+        enumerateChildNodes(withName: "./*", using: { node, _ in
+//            print(node.name)
+            let rc = self.toRowCol(location: node.position)
+//            print("(\(rc.x), \(rc.y))")
+            if let leftBlock = self.findBlock (row: Int(rc.y - 1), col: Int(rc.x)) {
+                if leftBlock.name != node.name {
+                    gameWon = false
+                }
+            }
+            if let rightBlock = self.findBlock (row: Int(rc.y + 1), col: Int(rc.x)){
+                if rightBlock.name != node.name {
+                    gameWon = false
+                }
+            }
+           
+            if let upBlock = self.findBlock (row: Int(rc.y), col: Int(rc.x-1)){
+                if upBlock.name != node.name {
+                    gameWon = false
+                }
+            }
+           
+            if let downBlock = self.findBlock (row: Int(rc.y), col: Int(rc.x+1)){
+                if downBlock.name != node.name {
+                    gameWon = false
+                }
+            }
+           
+            
+        })
+        print(gameWon)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        let touchLocation = touch.location(in: self)
+        sceneTouched(touchLocation: touchLocation)
+    }
+    
+    func findBlock (row:Int,col:Int) -> BlockNode? {
+        var block: BlockNode?
+
+        let position = gridPosition(row: row, col: col)
+        
+        enumerateChildNodes(withName: "//*", using: { node, _ in
+            if (node.position.equalTo(position)) {
+                block = node as? BlockNode
+            }
+        })
+        
+        return block
+    }
+
 }
