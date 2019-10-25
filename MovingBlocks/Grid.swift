@@ -84,31 +84,37 @@ class Grid:SKSpriteNode {
         enumerateChildNodes(withName: "./*", using: { node, _ in
 //            print(node.name)
             let c = self.toRowCol(location: node.position)
-//            print("(\(rc.x), \(rc.y))")
-
+            var alone = true // node has no neighbors
             if let leftBlock = self.findBlock (cell: c.left()) {
-                if leftBlock.name != node.name {
+                if (leftBlock.name != node.name)  {
                     gameWon = false
                 }
+                alone = false
             }
             if let rightBlock = self.findBlock (cell: c.right()){
                 if rightBlock.name != node.name {
                     gameWon = false
                 }
+                alone = false
             }
            
             if let upBlock = self.findBlock (cell: c.up()){
                 if upBlock.name != node.name {
                     gameWon = false
                 }
+                alone = false
             }
            
             if let downBlock = self.findBlock (cell: c.down()){
                 if downBlock.name != node.name {
                     gameWon = false
                 }
+                alone = false
             }
             
+            if (alone) {
+                gameWon = false
+            }
         })
         print(gameWon)
     }

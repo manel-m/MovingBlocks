@@ -51,6 +51,22 @@ class GameScene: SKScene {
             gamePiece3.name = "red"
             grid.addChild(gamePiece3)
             
+            let gamePiece4 = BlockNode (imageNamed: "block-color-red")
+            gamePiece4.position = grid.gridPosition(cell: Cell(row: 0, col: 3))
+            gamePiece4.name = "red"
+            grid.addChild(gamePiece4)
+            
+            let gamePiece5 = BlockNode (imageNamed: "block-color-blue")
+            gamePiece5.position = grid.gridPosition(cell: Cell(row: 4, col: 4))
+            gamePiece5.name = "blue"
+            grid.addChild(gamePiece5)
+            
+            let gamePiece6 = BlockNode(imageNamed: "block-color-white")
+            //gamePiece.setScale(0.0625)
+            gamePiece6.position = grid.gridPosition(cell: Cell(row: 3, col: 1))
+            gamePiece6.name = "white"
+            grid.addChild(gamePiece6)
+            
             enumerateChildNodes(withName: "//*", using: { node, _ in
                 if let eventListenerNode = node as? EventListenerNode {
                     eventListenerNode.didMoveToScene()
