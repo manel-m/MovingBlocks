@@ -31,23 +31,23 @@ class GameScene: SKScene {
             
             let gamePiece = BlockNode (imageNamed: "block-color-blue")
             //gamePiece.setScale(0.0625)
-            gamePiece.position = grid.gridPosition(row: 1, col: 0)
+            gamePiece.position = grid.gridPosition(cell: Cell(row:1, col:0))
             gamePiece.name = "blue"
             grid.addChild(gamePiece)
             
             let gamePiece1 = BlockNode(imageNamed: "block-color-white")
             //gamePiece.setScale(0.0625)
-            gamePiece1.position = grid.gridPosition(row: 0, col: 1)
+            gamePiece1.position = grid.gridPosition(cell: Cell(row: 0, col: 1))
             gamePiece1.name = "white"
             grid.addChild(gamePiece1)
             
             let gamePiece2 = BlockNode (imageNamed: "block-color-red")
-            gamePiece2.position = grid.gridPosition(row: 4, col: 1)
+            gamePiece2.position = grid.gridPosition(cell: Cell(row: 4, col: 1))
             gamePiece2.name = "red"
             grid.addChild(gamePiece2)
             
             let gamePiece3 = BlockNode (imageNamed: "block-color-red")
-            gamePiece3.position = grid.gridPosition(row: 4, col: 2)
+            gamePiece3.position = grid.gridPosition(cell: Cell(row: 4, col: 2))
             gamePiece3.name = "red"
             grid.addChild(gamePiece3)
             

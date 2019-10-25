@@ -56,57 +56,58 @@ class Grid:SKSpriteNode {
         return SKTexture(image: image!)
     }
     
-    func gridPosition(row:Int, col:Int) -> CGPoint {
+    func gridPosition(cell:Cell) -> CGPoint {
         let offset = blockSize / 2.0 + 0.5
-        let x = CGFloat(col) * blockSize - (blockSize * CGFloat(cols)) / 2.0 + offset
-        let y = CGFloat(rows - row - 1) * blockSize - (blockSize * CGFloat(rows)) / 2.0 + offset
+        let x = CGFloat(cell.col) * blockSize - (blockSize * CGFloat(cols)) / 2.0 + offset
+        let y = CGFloat(rows - cell.row - 1) * blockSize - (blockSize * CGFloat(rows)) / 2.0 + offset
         return CGPoint(x: x, y: y)
     }
     
-    func toRowCol(location:CGPoint) -> CGPoint {
-        let x = Int((location.x + (blockSize * CGFloat(cols)) / 2) / blockSize)
-        let y = rows - 1 - Int((location.y + (blockSize * CGFloat(rows)) / 2) / blockSize)
-        return CGPoint(x:x, y:y)
+    func toRowCol(location:CGPoint) -> Cell {
+        let col = Int((location.x + (blockSize * CGFloat(cols)) / 2) / blockSize)
+        let row = rows - 1 - Int((location.y + (blockSize * CGFloat(rows)) / 2) / blockSize)
+        return Cell(row:row, col:col)
     }
     
     func sceneTouched(touchLocation:CGPoint) {
-        let p = toRowCol(location:touchLocation)
+        let c = toRowCol(location:touchLocation)
         //print ("x: \(p.x), y: \(p.y)")
         
         if let b = GameScene.block {
-            b.position = gridPosition(row: Int(p.y), col: Int(p.x))
+            b.position = gridPosition(cell:c)
             checkWinCondition()
         }
     }
+    
     func checkWinCondition() {
         var gameWon = true
         enumerateChildNodes(withName: "./*", using: { node, _ in
 //            print(node.name)
-            let rc = self.toRowCol(location: node.position)
+            let c = self.toRowCol(location: node.position)
 //            print("(\(rc.x), \(rc.y))")
-            if let leftBlock = self.findBlock (row: Int(rc.y - 1), col: Int(rc.x)) {
+
+            if let leftBlock = self.findBlock (cell: c.left()) {
                 if leftBlock.name != node.name {
                     gameWon = false
                 }
             }
-            if let rightBlock = self.findBlock (row: Int(rc.y + 1), col: Int(rc.x)){
+            if let rightBlock = self.findBlock (cell: c.right()){
                 if rightBlock.name != node.name {
                     gameWon = false
                 }
             }
            
-            if let upBlock = self.findBlock (row: Int(rc.y), col: Int(rc.x-1)){
+            if let upBlock = self.findBlock (cell: c.up()){
                 if upBlock.name != node.name {
                     gameWon = false
                 }
             }
            
-            if let downBlock = self.findBlock (row: Int(rc.y), col: Int(rc.x+1)){
+            if let downBlock = self.findBlock (cell: c.down()){
                 if downBlock.name != node.name {
                     gameWon = false
                 }
             }
-           
             
         })
         print(gameWon)
@@ -120,10 +121,10 @@ class Grid:SKSpriteNode {
         sceneTouched(touchLocation: touchLocation)
     }
     
-    func findBlock (row:Int,col:Int) -> BlockNode? {
+    func findBlock (cell:Cell) -> BlockNode? {
         var block: BlockNode?
 
-        let position = gridPosition(row: row, col: col)
+        let position = gridPosition(cell:cell)
         
         enumerateChildNodes(withName: "//*", using: { node, _ in
             if (node.position.equalTo(position)) {
