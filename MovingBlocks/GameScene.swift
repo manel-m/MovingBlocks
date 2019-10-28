@@ -22,6 +22,13 @@ class GameScene: SKScene {
     
     var lastTouchLocation : CGPoint?
     
+    func addBlock(grid:Grid, row:Int, col:Int, color:String) {
+        let gamePiece = BlockNode (imageNamed: "block-color-\(color)")
+        gamePiece.position = grid.gridPosition(cell: Cell(row:row, col:col))
+        gamePiece.name = color
+        grid.addChild(gamePiece)
+    }
+    
     override func didMove(to: SKView) {
         
         if let grid = Grid(blockSize: 200.0, rows:5, cols:5) {
@@ -29,11 +36,7 @@ class GameScene: SKScene {
             grid.name = "grid"
             addChild(grid)
             
-            let gamePiece = BlockNode (imageNamed: "block-color-blue")
-            //gamePiece.setScale(0.0625)
-            gamePiece.position = grid.gridPosition(cell: Cell(row:1, col:0))
-            gamePiece.name = "blue"
-            grid.addChild(gamePiece)
+            addBlock(grid: grid, row: 1, col: 0, color: "blue")
             
             let gamePiece1 = BlockNode(imageNamed: "block-color-white")
             //gamePiece.setScale(0.0625)
@@ -62,10 +65,47 @@ class GameScene: SKScene {
             grid.addChild(gamePiece5)
             
             let gamePiece6 = BlockNode(imageNamed: "block-color-white")
-            //gamePiece.setScale(0.0625)
             gamePiece6.position = grid.gridPosition(cell: Cell(row: 3, col: 1))
             gamePiece6.name = "white"
             grid.addChild(gamePiece6)
+            
+            let gamePiece7 = BlockNode(imageNamed: "block-color-yellow")
+            gamePiece7.position = grid.gridPosition(cell: Cell(row: 3, col: 3))
+            gamePiece7.name = "yellow"
+            grid.addChild(gamePiece7)
+            
+            let gamePiece8 = BlockNode(imageNamed: "block-color-yellow")
+            gamePiece8.position = grid.gridPosition(cell: Cell(row: 0, col: 4))
+            gamePiece8.name = "yellow"
+            grid.addChild(gamePiece8)
+            
+            let gamePiece9 = BlockNode(imageNamed: "block-color-purple")
+            gamePiece9.position = grid.gridPosition(cell: Cell(row:2, col: 4))
+            gamePiece9.name = "purple"
+            grid.addChild(gamePiece9)
+            
+            let gamePiece10 = BlockNode(imageNamed: "block-color-purple")
+            gamePiece10.position = grid.gridPosition(cell: Cell(row:2, col: 2))
+            gamePiece10.name = "purple"
+            grid.addChild(gamePiece10)
+            
+//            let gamePiece11 = BlockNode(imageNamed: "block-color-orange")
+//            gamePiece11.position = grid.gridPosition(cell: Cell(row:2, col: 0))
+//            gamePiece11.name = "orange"
+//            grid.addChild(gamePiece11)
+//            
+//            let gamePiece12 = BlockNode(imageNamed: "block-color-orange")
+//            gamePiece12.position = grid.gridPosition(cell: Cell(row:4, col: 0))
+//            gamePiece12.name = "orange"
+//            grid.addChild(gamePiece12)
+            
+            let gamePiece13 = BlockNode(imageNamed: "block-color-black")
+            gamePiece13.position = grid.gridPosition(cell: Cell(row:3, col: 4))
+            gamePiece13.name = "black"
+            gamePiece13.isUserInteractionEnabled = false
+            grid.addChild(gamePiece13)
+            
+            
             
             enumerateChildNodes(withName: "//*", using: { node, _ in
                 if let eventListenerNode = node as? EventListenerNode {

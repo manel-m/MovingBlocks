@@ -74,6 +74,7 @@ class Grid:SKSpriteNode {
         //print ("x: \(p.x), y: \(p.y)")
         
         if let b = GameScene.block {
+            GameScene.block = nil
             b.position = gridPosition(cell:c)
             checkWinCondition()
         }
@@ -83,6 +84,7 @@ class Grid:SKSpriteNode {
         var gameWon = true
         enumerateChildNodes(withName: "./*", using: { node, _ in
 //            print(node.name)
+
             let c = self.toRowCol(location: node.position)
             var alone = true // node has no neighbors
             if let leftBlock = self.findBlock (cell: c.left()) {
@@ -112,7 +114,7 @@ class Grid:SKSpriteNode {
                 alone = false
             }
             
-            if (alone) {
+            if alone && (node.name != "black") {
                 gameWon = false
             }
         })

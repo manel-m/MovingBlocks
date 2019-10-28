@@ -10,7 +10,9 @@
 import SpriteKit
 class BlockNode: SKSpriteNode , EventListenerNode {
     func didMoveToScene() {
-        isUserInteractionEnabled = true
+        if name != "black" {
+            isUserInteractionEnabled = true
+        }
 //        zPosition = 10
     }
 
