@@ -17,95 +17,49 @@ protocol InteractiveNode {
     func interact()
 }
 
-class GameScene: SKScene {
+class GameScene: SKScene, WinCallback {
     static var block: BlockNode!
-    
+    static var currentLevel: Int = 0
+
     var lastTouchLocation : CGPoint?
-    
-    func addBlock(grid:Grid, row:Int, col:Int, color:String) {
-        let gamePiece = BlockNode (imageNamed: "block-color-\(color)")
-        gamePiece.position = grid.gridPosition(cell: Cell(row:row, col:col))
-        gamePiece.name = color
-        grid.addChild(gamePiece)
+
+    static func loadLevel(grid: Grid) {
+        if currentLevel == 0 {
+            grid.addBlock(row: 1, col: 0, color: "blue")
+            grid.addBlock(row: 0, col: 1, color: "white")
+            grid.addBlock(row: 4, col: 1, color: "red")
+            grid.addBlock(row: 4, col: 2, color: "red")
+            grid.addBlock(row: 0, col: 3, color: "red")
+            grid.addBlock(row: 4, col: 4, color: "blue")
+            grid.addBlock(row: 3, col: 1, color: "white")
+        } else if currentLevel == 1 {
+            grid.addBlock(row: 1, col: 0, color: "blue")
+            grid.addBlock(row: 0, col: 1, color: "white")
+            grid.addBlock(row: 4, col: 1, color: "red")
+            grid.addBlock(row: 4, col: 2, color: "red")
+            grid.addBlock(row: 0, col: 3, color: "red")
+            grid.addBlock(row: 4, col: 4, color: "blue")
+            grid.addBlock(row: 3, col: 1, color: "white")
+            grid.addBlock(row: 3, col: 3, color: "yellow")
+            grid.addBlock(row: 0, col: 4, color: "yellow")
+            grid.addBlock(row: 2, col: 4, color: "purple")
+            grid.addBlock(row: 2, col: 2, color: "purple")
+            grid.addBlock(row: 3, col: 4, color: "black")
+        }
     }
-    
+//    func level1(_ grid:Grid) {
+//        grid.addBlock(row: 1, col: 0, color: "blue")
+//        grid.addBlock(row: 0, col: 1, color: "white")
+//    }
+
     override func didMove(to: SKView) {
         
-        if let grid = Grid(blockSize: 200.0, rows:5, cols:5) {
+        if let grid = Grid(blockSize: 200.0, rows:5, cols:5, delegate: self) {
             grid.position = CGPoint (x:frame.midX, y:frame.midY)
             grid.name = "grid"
             addChild(grid)
             
-            addBlock(grid: grid, row: 1, col: 0, color: "blue")
-            
-            let gamePiece1 = BlockNode(imageNamed: "block-color-white")
-            //gamePiece.setScale(0.0625)
-            gamePiece1.position = grid.gridPosition(cell: Cell(row: 0, col: 1))
-            gamePiece1.name = "white"
-            grid.addChild(gamePiece1)
-            
-            let gamePiece2 = BlockNode (imageNamed: "block-color-red")
-            gamePiece2.position = grid.gridPosition(cell: Cell(row: 4, col: 1))
-            gamePiece2.name = "red"
-            grid.addChild(gamePiece2)
-            
-            let gamePiece3 = BlockNode (imageNamed: "block-color-red")
-            gamePiece3.position = grid.gridPosition(cell: Cell(row: 4, col: 2))
-            gamePiece3.name = "red"
-            grid.addChild(gamePiece3)
-            
-            let gamePiece4 = BlockNode (imageNamed: "block-color-red")
-            gamePiece4.position = grid.gridPosition(cell: Cell(row: 0, col: 3))
-            gamePiece4.name = "red"
-            grid.addChild(gamePiece4)
-            
-            let gamePiece5 = BlockNode (imageNamed: "block-color-blue")
-            gamePiece5.position = grid.gridPosition(cell: Cell(row: 4, col: 4))
-            gamePiece5.name = "blue"
-            grid.addChild(gamePiece5)
-            
-            let gamePiece6 = BlockNode(imageNamed: "block-color-white")
-            gamePiece6.position = grid.gridPosition(cell: Cell(row: 3, col: 1))
-            gamePiece6.name = "white"
-            grid.addChild(gamePiece6)
-            
-            let gamePiece7 = BlockNode(imageNamed: "block-color-yellow")
-            gamePiece7.position = grid.gridPosition(cell: Cell(row: 3, col: 3))
-            gamePiece7.name = "yellow"
-            grid.addChild(gamePiece7)
-            
-            let gamePiece8 = BlockNode(imageNamed: "block-color-yellow")
-            gamePiece8.position = grid.gridPosition(cell: Cell(row: 0, col: 4))
-            gamePiece8.name = "yellow"
-            grid.addChild(gamePiece8)
-            
-            let gamePiece9 = BlockNode(imageNamed: "block-color-purple")
-            gamePiece9.position = grid.gridPosition(cell: Cell(row:2, col: 4))
-            gamePiece9.name = "purple"
-            grid.addChild(gamePiece9)
-            
-            let gamePiece10 = BlockNode(imageNamed: "block-color-purple")
-            gamePiece10.position = grid.gridPosition(cell: Cell(row:2, col: 2))
-            gamePiece10.name = "purple"
-            grid.addChild(gamePiece10)
-            
-//            let gamePiece11 = BlockNode(imageNamed: "block-color-orange")
-//            gamePiece11.position = grid.gridPosition(cell: Cell(row:2, col: 0))
-//            gamePiece11.name = "orange"
-//            grid.addChild(gamePiece11)
-//            
-//            let gamePiece12 = BlockNode(imageNamed: "block-color-orange")
-//            gamePiece12.position = grid.gridPosition(cell: Cell(row:4, col: 0))
-//            gamePiece12.name = "orange"
-//            grid.addChild(gamePiece12)
-            
-            let gamePiece13 = BlockNode(imageNamed: "block-color-black")
-            gamePiece13.position = grid.gridPosition(cell: Cell(row:3, col: 4))
-            gamePiece13.name = "black"
-            gamePiece13.isUserInteractionEnabled = false
-            grid.addChild(gamePiece13)
-            
-            
+            GameScene.loadLevel(grid: grid)
             
             enumerateChildNodes(withName: "//*", using: { node, _ in
                 if let eventListenerNode = node as? EventListenerNode {
@@ -115,5 +69,15 @@ class GameScene: SKScene {
         }
     }
 
+    func gameWon() {
+        GameScene.currentLevel += 1
+        if let scene = SKScene(fileNamed: "GameScene") {
+            // Set the scale mode to scale to fit the window
+            scene.scaleMode = .aspectFill
+            
+            // Present the scene
+            view!.presentScene(scene)
+        }
+    }
 
 }

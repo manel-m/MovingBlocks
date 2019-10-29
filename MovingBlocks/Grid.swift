@@ -6,13 +6,19 @@
 //  Copyright © 2019 Manel matougui. All rights reserved.
 //
 import SpriteKit
+
+protocol WinCallback {
+    func gameWon()
+}
+
 class Grid:SKSpriteNode {
     
     var rows:Int!
     var cols:Int!
     var blockSize:CGFloat!
+    var winDelegate:WinCallback!
     
-    convenience init?(blockSize:CGFloat,rows:Int,cols:Int) {
+    convenience init?(blockSize:CGFloat,rows:Int,cols:Int, delegate:WinCallback) {
         guard let texture = Grid.gridTexture(blockSize: blockSize,rows: rows, cols:cols) else {
             return nil
         }
@@ -22,6 +28,8 @@ class Grid:SKSpriteNode {
         self.cols = cols
         
         self.isUserInteractionEnabled = true
+        
+        self.winDelegate = delegate
     }
     
     class func gridTexture(blockSize:CGFloat,rows:Int,cols:Int) -> SKTexture? {
@@ -118,7 +126,9 @@ class Grid:SKSpriteNode {
                 gameWon = false
             }
         })
-        print(gameWon)
+        if gameWon {
+            winDelegate.gameWon()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -141,6 +151,13 @@ class Grid:SKSpriteNode {
         })
         
         return block
+    }
+    
+    func addBlock(row:Int, col:Int, color:String) {
+        let gamePiece = BlockNode (imageNamed: "block-color-\(color)")
+        gamePiece.position = gridPosition(cell: Cell(row:row, col:col))
+        gamePiece.name = color
+        addChild(gamePiece)
     }
 
 }
