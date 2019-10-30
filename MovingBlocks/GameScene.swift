@@ -81,12 +81,16 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
                                   width: size.width, height: size.height-playableMargin*2)
         physicsBody = SKPhysicsBody(edgeLoopFrom: playableRect)
         physicsWorld.contactDelegate = self
-        physicsBody!.categoryBitMask = PhysicsCategory.Edge 
+        physicsBody!.categoryBitMask = PhysicsCategory.Edge
+        
+        SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
     }
 
     func gameWon() {
-        run(SKAction.afterDelay(5, runBlock: newGame))
+        run(SKAction.afterDelay(3, runBlock: newGame))
         inGameMessage(text: "Nice job!")
+        SKTAudio.sharedInstance().pauseBackgroundMusic()
+        SKTAudio.sharedInstance().playSoundEffect("win.wav")
     }
     
     func newGame() {
