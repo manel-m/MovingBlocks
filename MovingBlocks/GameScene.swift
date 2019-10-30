@@ -17,7 +17,15 @@ protocol InteractiveNode {
     func interact()
 }
 
-class GameScene: SKScene, WinCallback {
+struct PhysicsCategory {
+    // static let None:  UInt32 = 0
+    static let Label:   UInt32 = 0// 1
+    static let Edge: UInt32 = 0b1 // 2
+    //    static let Edge: UInt32 = 0b1000 // 8
+    //    static let Label: UInt32 = 0b10000 // 16
+}
+
+class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
     static var block: BlockNode!
     static var currentLevel: Int = 1
 
@@ -64,10 +72,20 @@ class GameScene: SKScene, WinCallback {
                 }
             })
         }
+        // Calculate playable margin
+        let maxAspectRatio: CGFloat = 16.0/9.0
+        let maxAspectRatioHeight = size.width / maxAspectRatio
+        let playableMargin: CGFloat = (size.height
+            - maxAspectRatioHeight)/2
+        let playableRect = CGRect(x: 0, y: playableMargin,
+                                  width: size.width, height: size.height-playableMargin*2)
+        physicsBody = SKPhysicsBody(edgeLoopFrom: playableRect)
+        physicsWorld.contactDelegate = self
+        physicsBody!.categoryBitMask = PhysicsCategory.Edge 
     }
 
     func gameWon() {
-        run(SKAction.afterDelay(3, runBlock: newGame))
+        run(SKAction.afterDelay(5, runBlock: newGame))
         inGameMessage(text: "Nice job!")
     }
     
