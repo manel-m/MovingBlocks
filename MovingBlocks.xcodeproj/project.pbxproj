@@ -18,6 +18,9 @@
 		9905DCFA23430F150032C53D /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905DCF923430F150032C53D /* Grid.swift */; };
 		9905DCFC234ED5220032C53D /* BlockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905DCFB234ED5210032C53D /* BlockNode.swift */; };
 		995D57D223625D5700D1FE73 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D57D123625D5600D1FE73 /* Cell.swift */; };
+		995D57D42368F7AA00D1FE73 /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D57D32368F7AA00D1FE73 /* Levels.swift */; };
+		995D57D623691FA800D1FE73 /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D57D523691FA800D1FE73 /* SKAction+Extensions.swift */; };
+		995D57D823693FE100D1FE73 /* MessageNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D57D723693FE100D1FE73 /* MessageNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		9905DCF923430F150032C53D /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		9905DCFB234ED5210032C53D /* BlockNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockNode.swift; sourceTree = "<group>"; };
 		995D57D123625D5600D1FE73 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		995D57D32368F7AA00D1FE73 /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
+		995D57D523691FA800D1FE73 /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+Extensions.swift"; sourceTree = "<group>"; };
+		995D57D723693FE100D1FE73 /* MessageNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,9 @@
 				9905DCFB234ED5210032C53D /* BlockNode.swift */,
 				9905DCF923430F150032C53D /* Grid.swift */,
 				995D57D123625D5600D1FE73 /* Cell.swift */,
+				995D57D32368F7AA00D1FE73 /* Levels.swift */,
+				995D57D523691FA800D1FE73 /* SKAction+Extensions.swift */,
+				995D57D723693FE100D1FE73 /* MessageNode.swift */,
 				9905DCEB233D6BE90032C53D /* Main.storyboard */,
 				9905DCEE233D6BF20032C53D /* Assets.xcassets */,
 				9905DCF0233D6BF20032C53D /* LaunchScreen.storyboard */,
@@ -156,7 +165,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9905DCE8233D6BE80032C53D /* GameScene.swift in Sources */,
+				995D57D42368F7AA00D1FE73 /* Levels.swift in Sources */,
 				9905DCFC234ED5220032C53D /* BlockNode.swift in Sources */,
+				995D57D623691FA800D1FE73 /* SKAction+Extensions.swift in Sources */,
+				995D57D823693FE100D1FE73 /* MessageNode.swift in Sources */,
 				9905DCEA233D6BE80032C53D /* GameViewController.swift in Sources */,
 				9905DCE2233D6BE80032C53D /* AppDelegate.swift in Sources */,
 				9905DCFA23430F150032C53D /* Grid.swift in Sources */,

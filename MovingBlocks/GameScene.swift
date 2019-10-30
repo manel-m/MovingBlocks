@@ -19,38 +19,35 @@ protocol InteractiveNode {
 
 class GameScene: SKScene, WinCallback {
     static var block: BlockNode!
-    static var currentLevel: Int = 0
+    static var currentLevel: Int = 1
 
     var lastTouchLocation : CGPoint?
 
     static func loadLevel(grid: Grid) {
-        if currentLevel == 0 {
-            grid.addBlock(row: 1, col: 0, color: "blue")
-            grid.addBlock(row: 0, col: 1, color: "white")
-            grid.addBlock(row: 4, col: 1, color: "red")
-            grid.addBlock(row: 4, col: 2, color: "red")
-            grid.addBlock(row: 0, col: 3, color: "red")
-            grid.addBlock(row: 4, col: 4, color: "blue")
-            grid.addBlock(row: 3, col: 1, color: "white")
-        } else if currentLevel == 1 {
-            grid.addBlock(row: 1, col: 0, color: "blue")
-            grid.addBlock(row: 0, col: 1, color: "white")
-            grid.addBlock(row: 4, col: 1, color: "red")
-            grid.addBlock(row: 4, col: 2, color: "red")
-            grid.addBlock(row: 0, col: 3, color: "red")
-            grid.addBlock(row: 4, col: 4, color: "blue")
-            grid.addBlock(row: 3, col: 1, color: "white")
-            grid.addBlock(row: 3, col: 3, color: "yellow")
-            grid.addBlock(row: 0, col: 4, color: "yellow")
-            grid.addBlock(row: 2, col: 4, color: "purple")
-            grid.addBlock(row: 2, col: 2, color: "purple")
-            grid.addBlock(row: 3, col: 4, color: "black")
+        if currentLevel == 1 {
+            Levels.level1(grid: grid)
+        } else if currentLevel == 2 {
+            Levels.level2(grid: grid)
+        } else if currentLevel == 3 {
+            Levels.level3(grid: grid)
+        } else if currentLevel == 4 {
+            Levels.level4(grid: grid)
+        }
+        else if currentLevel == 5 {
+            Levels.level5(grid: grid)
+        } else if currentLevel == 6 {
+            Levels.level7(grid: grid)
+        } else if currentLevel == 7 {
+            Levels.level7(grid: grid)
+        } else if currentLevel == 8 {
+            Levels.level8(grid: grid)
+        } else if currentLevel == 9 {
+            Levels.level9(grid: grid)
+        } else if currentLevel == 10 {
+            Levels.level10(grid: grid)
         }
     }
-//    func level1(_ grid:Grid) {
-//        grid.addBlock(row: 1, col: 0, color: "blue")
-//        grid.addBlock(row: 0, col: 1, color: "white")
-//    }
+
 
     override func didMove(to: SKView) {
         
@@ -70,6 +67,11 @@ class GameScene: SKScene, WinCallback {
     }
 
     func gameWon() {
+        run(SKAction.afterDelay(3, runBlock: newGame))
+        inGameMessage(text: "Nice job!")
+    }
+    
+    func newGame() {
         GameScene.currentLevel += 1
         if let scene = SKScene(fileNamed: "GameScene") {
             // Set the scale mode to scale to fit the window
@@ -78,6 +80,12 @@ class GameScene: SKScene, WinCallback {
             // Present the scene
             view!.presentScene(scene)
         }
+    }
+    
+    func inGameMessage(text: String) {
+        let message = MessageNode(message: text)
+        message.position = CGPoint(x: frame.midX, y: frame.midY)
+        addChild(message)
     }
 
 }
