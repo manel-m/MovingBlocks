@@ -44,7 +44,7 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
         else if currentLevel == 5 {
             Levels.level5(grid: grid)
         } else if currentLevel == 6 {
-            Levels.level7(grid: grid)
+            Levels.level6(grid: grid)
         } else if currentLevel == 7 {
             Levels.level7(grid: grid)
         } else if currentLevel == 8 {
