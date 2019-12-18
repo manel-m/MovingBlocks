@@ -14,28 +14,25 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            if let scene = SKScene(fileNamed: "Menu") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
                 // Present the scene
                 view.presentScene(scene)
             }
-            
-            view.ignoresSiblingOrder = false
-            
+            view.ignoresSiblingOrder = false // LATER: check this paramater
+            // show this parameter in scene game //LATER: turn them off
             view.showsFPS = true
             view.showsNodeCount = true
         }
     }
-
+   
     override var shouldAutorotate: Bool {
         return true
     }
-
+    // device orientation
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
@@ -43,7 +40,8 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-
+    
+    // what this fonction ??????
     override var prefersStatusBarHidden: Bool {
         return true
     }

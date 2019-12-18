@@ -13,6 +13,31 @@ import GameplayKit
 
 class Levels {
     
+//    static func level(grid:Grid) {
+//        var levelStr: [String] = [
+//            "__F__",
+//            "__F__",
+//            "O_F__",
+//            "O__BB",
+//            "OO___"
+//        ]
+//        
+//        for row in 0...4 {
+//            let rowStr = levelStr[row]
+//            var col = 0
+//            for char in rowStr {
+//                if (char == "F") {
+//                    grid.addBlock(row: row, col: col, color: "black")
+//                } else if (char == "O") {
+//                    grid.addBlock(row: row, col: col, color: "orange")
+//                } else if (char == "B") {
+//                    grid.addBlock(row: row, col: col, color: "blue")
+//                }
+//                col += 1
+//            }
+//        }
+//    }
+//    
     static func level1 (grid: Grid){
         grid.addBlock(row: 1, col: 0, color: "blue")
         grid.addBlock(row: 4, col: 4, color: "blue")

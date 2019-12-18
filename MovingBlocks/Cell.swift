@@ -7,11 +7,12 @@
 //
 
 import Foundation
-
+// grid contains 5*5 cells
 class Cell {
+    // cell parameters
     let row : Int
     let col : Int
-    
+    // initialise cell's parameters
     init(row: Int, col: Int) {
         self.row = row
         self.col = col
