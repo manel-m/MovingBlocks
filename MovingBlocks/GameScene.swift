@@ -80,7 +80,10 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         physicsBody!.categoryBitMask = PhysicsCategory.Edge
         // add Background Music
-        // SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
+        if !MusicButton.musicPaused {
+     SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
+        }
+        
     }
     
     // if the player win
