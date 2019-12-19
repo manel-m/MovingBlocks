@@ -22,12 +22,12 @@ class SoundButton : SKSpriteNode {
         let texture2 = SKTexture(imageNamed: "btn-sound-off")
         if SoundButton.SoundPaused {
             self.texture = texture1
-            MusicButton.musicPaused = false
+            SoundButton.SoundPaused = false
             print("sound off")
         } else {
             //SKTAudio.sharedInstance().playSoundEffect("win.wav")
             self.texture = texture2
-            MusicButton.musicPaused = true
+            SoundButton.SoundPaused = true
             print("sound on")
         }
     }

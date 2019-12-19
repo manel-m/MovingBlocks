@@ -20,6 +20,10 @@
 		9926018E23A9F1F10061FF15 /* MusicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926018D23A9F1F10061FF15 /* MusicButton.swift */; };
 		9926019023AAB1CA0061FF15 /* Homescene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926018F23AAB1CA0061FF15 /* Homescene.swift */; };
 		9926019223AAB4B80061FF15 /* SoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926019123AAB4B80061FF15 /* SoundButton.swift */; };
+		9926019423AB03E30061FF15 /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926019323AB03E30061FF15 /* HomeButton.swift */; };
+		9926019823AB10C80061FF15 /* LevelsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926019723AB10C80061FF15 /* LevelsButton.swift */; };
+		9926019A23AB35220061FF15 /* LevelsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926019923AB35220061FF15 /* LevelsScene.swift */; };
+		9926019C23AB37270061FF15 /* LevelSelector.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9926019B23AB37270061FF15 /* LevelSelector.sks */; };
 		9958522623A9E9870031C671 /* Home.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9958522523A9E9870031C671 /* Home.sks */; };
 		995D57D223625D5700D1FE73 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D57D123625D5600D1FE73 /* Cell.swift */; };
 		995D57D42368F7AA00D1FE73 /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D57D32368F7AA00D1FE73 /* Levels.swift */; };
@@ -52,6 +56,10 @@
 		9926018D23A9F1F10061FF15 /* MusicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicButton.swift; sourceTree = "<group>"; };
 		9926018F23AAB1CA0061FF15 /* Homescene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homescene.swift; sourceTree = "<group>"; };
 		9926019123AAB4B80061FF15 /* SoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundButton.swift; sourceTree = "<group>"; };
+		9926019323AB03E30061FF15 /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
+		9926019723AB10C80061FF15 /* LevelsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsButton.swift; sourceTree = "<group>"; };
+		9926019923AB35220061FF15 /* LevelsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsScene.swift; sourceTree = "<group>"; };
+		9926019B23AB37270061FF15 /* LevelSelector.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelSelector.sks; sourceTree = "<group>"; };
 		9958522523A9E9870031C671 /* Home.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Home.sks; sourceTree = "<group>"; };
 		995D57D123625D5600D1FE73 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		995D57D32368F7AA00D1FE73 /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
@@ -105,6 +113,7 @@
 				9905DCE1233D6BE80032C53D /* AppDelegate.swift */,
 				9905DCE7233D6BE80032C53D /* GameScene.swift */,
 				9926018F23AAB1CA0061FF15 /* Homescene.swift */,
+				9926019923AB35220061FF15 /* LevelsScene.swift */,
 				9905DCE9233D6BE80032C53D /* GameViewController.swift */,
 				9905DCFB234ED5210032C53D /* BlockNode.swift */,
 				9905DCF923430F150032C53D /* Grid.swift */,
@@ -121,6 +130,7 @@
 		9926018B23A9F0ED0061FF15 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				9926019B23AB37270061FF15 /* LevelSelector.sks */,
 				9905DCE3233D6BE80032C53D /* GameScene.sks */,
 				9958522523A9E9870031C671 /* Home.sks */,
 				9905DCE5233D6BE80032C53D /* Actions.sks */,
@@ -145,6 +155,8 @@
 				995D57EC23713FFC00D1FE73 /* PlayButton.swift */,
 				9926018D23A9F1F10061FF15 /* MusicButton.swift */,
 				9926019123AAB4B80061FF15 /* SoundButton.swift */,
+				9926019323AB03E30061FF15 /* HomeButton.swift */,
+				9926019723AB10C80061FF15 /* LevelsButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -230,6 +242,7 @@
 				995D57DF23694DE600D1FE73 /* win.wav in Resources */,
 				995D57E223694DE600D1FE73 /* hitCatLady.wav in Resources */,
 				9905DCF2233D6BF20032C53D /* LaunchScreen.storyboard in Resources */,
+				9926019C23AB37270061FF15 /* LevelSelector.sks in Resources */,
 				995D57E323694DE600D1FE73 /* backgroundMusic1.mp3 in Resources */,
 				9905DCE6233D6BE80032C53D /* Actions.sks in Resources */,
 			);
@@ -242,8 +255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9926019423AB03E30061FF15 /* HomeButton.swift in Sources */,
+				9926019A23AB35220061FF15 /* LevelsScene.swift in Sources */,
 				9905DCE8233D6BE80032C53D /* GameScene.swift in Sources */,
 				995D57E52369503500D1FE73 /* MyUtils.swift in Sources */,
+				9926019823AB10C80061FF15 /* LevelsButton.swift in Sources */,
 				995D57D42368F7AA00D1FE73 /* Levels.swift in Sources */,
 				9905DCFC234ED5220032C53D /* BlockNode.swift in Sources */,
 				995D57D623691FA800D1FE73 /* SKAction+Extensions.swift in Sources */,

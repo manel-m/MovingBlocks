@@ -91,7 +91,7 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
         run(SKAction.afterDelay(3, runBlock: newGame)) // show the next level after 3 seconds
         inGameMessage(text: "Nice job!")// show win label
         // pause and add play Sound Effect
-        if SoundButton.SoundPaused {
+        if !SoundButton.SoundPaused {
             SKTAudio.sharedInstance().pauseBackgroundMusic()
             SKTAudio.sharedInstance().playSoundEffect("win.wav")
         }
