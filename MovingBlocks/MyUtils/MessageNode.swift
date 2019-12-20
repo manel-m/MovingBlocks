@@ -7,9 +7,6 @@
 //
 
 import SpriteKit
-
-
-
 class MessageNode: SKLabelNode  {
     convenience init(message: String) {
         self.init(fontNamed: "MarkerFelt-Thin")

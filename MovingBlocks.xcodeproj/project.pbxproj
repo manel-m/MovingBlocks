@@ -24,6 +24,8 @@
 		9926019823AB10C80061FF15 /* LevelsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926019723AB10C80061FF15 /* LevelsButton.swift */; };
 		9926019A23AB35220061FF15 /* LevelsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926019923AB35220061FF15 /* LevelsScene.swift */; };
 		9926019E23AB39C10061FF15 /* LevelsSelector.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9926019D23AB39C10061FF15 /* LevelsSelector.sks */; };
+		992601A023AC55BB0061FF15 /* SelectLevelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926019F23AC55BB0061FF15 /* SelectLevelButton.swift */; };
+		992601A223AC5A160061FF15 /* LabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992601A123AC5A160061FF15 /* LabelNode.swift */; };
 		9958522623A9E9870031C671 /* Home.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9958522523A9E9870031C671 /* Home.sks */; };
 		995D57D223625D5700D1FE73 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D57D123625D5600D1FE73 /* Cell.swift */; };
 		995D57D42368F7AA00D1FE73 /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D57D32368F7AA00D1FE73 /* Levels.swift */; };
@@ -60,6 +62,8 @@
 		9926019723AB10C80061FF15 /* LevelsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsButton.swift; sourceTree = "<group>"; };
 		9926019923AB35220061FF15 /* LevelsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsScene.swift; sourceTree = "<group>"; };
 		9926019D23AB39C10061FF15 /* LevelsSelector.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelsSelector.sks; sourceTree = "<group>"; };
+		9926019F23AC55BB0061FF15 /* SelectLevelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLevelButton.swift; sourceTree = "<group>"; };
+		992601A123AC5A160061FF15 /* LabelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelNode.swift; sourceTree = "<group>"; };
 		9958522523A9E9870031C671 /* Home.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Home.sks; sourceTree = "<group>"; };
 		995D57D123625D5600D1FE73 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		995D57D32368F7AA00D1FE73 /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				995D57E82369529A00D1FE73 /* SKTAudio.swift */,
 				995D57D723693FE100D1FE73 /* MessageNode.swift */,
 				995D57E42369503400D1FE73 /* MyUtils.swift */,
+				992601A123AC5A160061FF15 /* LabelNode.swift */,
 			);
 			path = MyUtils;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				9926019123AAB4B80061FF15 /* SoundButton.swift */,
 				9926019323AB03E30061FF15 /* HomeButton.swift */,
 				9926019723AB10C80061FF15 /* LevelsButton.swift */,
+				9926019F23AC55BB0061FF15 /* SelectLevelButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				992601A223AC5A160061FF15 /* LabelNode.swift in Sources */,
 				9926019423AB03E30061FF15 /* HomeButton.swift in Sources */,
 				9926019A23AB35220061FF15 /* LevelsScene.swift in Sources */,
 				9905DCE8233D6BE80032C53D /* GameScene.swift in Sources */,
@@ -266,6 +273,7 @@
 				995D57ED23713FFC00D1FE73 /* PlayButton.swift in Sources */,
 				995D57E92369529A00D1FE73 /* SKTAudio.swift in Sources */,
 				9926019023AAB1CA0061FF15 /* Homescene.swift in Sources */,
+				992601A023AC55BB0061FF15 /* SelectLevelButton.swift in Sources */,
 				9926018E23A9F1F10061FF15 /* MusicButton.swift in Sources */,
 				995D57D823693FE100D1FE73 /* MessageNode.swift in Sources */,
 				9905DCEA233D6BE80032C53D /* GameViewController.swift in Sources */,
