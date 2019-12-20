@@ -23,7 +23,7 @@
 		9926019423AB03E30061FF15 /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926019323AB03E30061FF15 /* HomeButton.swift */; };
 		9926019823AB10C80061FF15 /* LevelsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926019723AB10C80061FF15 /* LevelsButton.swift */; };
 		9926019A23AB35220061FF15 /* LevelsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926019923AB35220061FF15 /* LevelsScene.swift */; };
-		9926019C23AB37270061FF15 /* LevelSelector.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9926019B23AB37270061FF15 /* LevelSelector.sks */; };
+		9926019E23AB39C10061FF15 /* LevelsSelector.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9926019D23AB39C10061FF15 /* LevelsSelector.sks */; };
 		9958522623A9E9870031C671 /* Home.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9958522523A9E9870031C671 /* Home.sks */; };
 		995D57D223625D5700D1FE73 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D57D123625D5600D1FE73 /* Cell.swift */; };
 		995D57D42368F7AA00D1FE73 /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D57D32368F7AA00D1FE73 /* Levels.swift */; };
@@ -59,7 +59,7 @@
 		9926019323AB03E30061FF15 /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
 		9926019723AB10C80061FF15 /* LevelsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsButton.swift; sourceTree = "<group>"; };
 		9926019923AB35220061FF15 /* LevelsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsScene.swift; sourceTree = "<group>"; };
-		9926019B23AB37270061FF15 /* LevelSelector.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelSelector.sks; sourceTree = "<group>"; };
+		9926019D23AB39C10061FF15 /* LevelsSelector.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelsSelector.sks; sourceTree = "<group>"; };
 		9958522523A9E9870031C671 /* Home.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Home.sks; sourceTree = "<group>"; };
 		995D57D123625D5600D1FE73 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		995D57D32368F7AA00D1FE73 /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
@@ -130,10 +130,10 @@
 		9926018B23A9F0ED0061FF15 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				9926019B23AB37270061FF15 /* LevelSelector.sks */,
 				9905DCE3233D6BE80032C53D /* GameScene.sks */,
 				9958522523A9E9870031C671 /* Home.sks */,
 				9905DCE5233D6BE80032C53D /* Actions.sks */,
+				9926019D23AB39C10061FF15 /* LevelsSelector.sks */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -235,6 +235,7 @@
 				995D57E72369518A00D1FE73 /* backgroundMusic.mp3 in Resources */,
 				9905DCED233D6BE90032C53D /* Main.storyboard in Resources */,
 				9958522623A9E9870031C671 /* Home.sks in Resources */,
+				9926019E23AB39C10061FF15 /* LevelsSelector.sks in Resources */,
 				9905DCE4233D6BE80032C53D /* GameScene.sks in Resources */,
 				9905DCEF233D6BF20032C53D /* Assets.xcassets in Resources */,
 				995D57E123694DE600D1FE73 /* hitCat.wav in Resources */,
@@ -242,7 +243,6 @@
 				995D57DF23694DE600D1FE73 /* win.wav in Resources */,
 				995D57E223694DE600D1FE73 /* hitCatLady.wav in Resources */,
 				9905DCF2233D6BF20032C53D /* LaunchScreen.storyboard in Resources */,
-				9926019C23AB37270061FF15 /* LevelSelector.sks in Resources */,
 				995D57E323694DE600D1FE73 /* backgroundMusic1.mp3 in Resources */,
 				9905DCE6233D6BE80032C53D /* Actions.sks in Resources */,
 			);

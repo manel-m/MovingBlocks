@@ -18,7 +18,7 @@ class LevelsButton : SKSpriteNode {
     
     override func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?) {
         print("button pressed")
-        if let levels = SKScene(fileNamed: "LevelSelector"){
+        if let levels = SKScene(fileNamed: "LevelsSelector"){
             // Set the scale mode to scale to fit the window
             levels.scaleMode = .aspectFill
             // Present the scene
