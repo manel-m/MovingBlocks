@@ -29,28 +29,30 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
     var lastTouchLocation : CGPoint?
 
     static func loadLevel(grid: Grid) {
-        if currentLevel == 1 {
-            Levels.level1(grid: grid)
-        } else if currentLevel == 2 {
-            Levels.level2(grid: grid)
-        } else if currentLevel == 3 {
-            Levels.level3(grid: grid)
-        } else if currentLevel == 4 {
-            Levels.level4(grid: grid)
-        }
-        else if currentLevel == 5 {
-            Levels.level5(grid: grid)
-        } else if currentLevel == 6 {
-            Levels.level6(grid: grid)
-        } else if currentLevel == 7 {
-            Levels.level7(grid: grid)
-        } else if currentLevel == 8 {
-            Levels.level8(grid: grid)
-        } else if currentLevel == 9 {
-            Levels.level9(grid: grid)
-        } else if currentLevel == 10 {
-            Levels.level10(grid: grid)
-        }
+        let levelStr = Levels.levels[currentLevel-1]
+        Levels.loadLevel(grid: grid, str: levelStr)
+//        if currentLevel == 1 {
+//            Levels.level1(grid: grid)
+//        } else if currentLevel == 2 {
+//            Levels.level2(grid: grid)
+//        } else if currentLevel == 3 {
+//            Levels.level3(grid: grid)
+//        } else if currentLevel == 4 {
+//            Levels.level4(grid: grid)
+//        }
+//        else if currentLevel == 5 {
+//            Levels.level5(grid: grid)
+//        } else if currentLevel == 6 {
+//            Levels.level6(grid: grid)
+//        } else if currentLevel == 7 {
+//            Levels.level7(grid: grid)
+//        } else if currentLevel == 8 {
+//            Levels.level8(grid: grid)
+//        } else if currentLevel == 9 {
+//            Levels.level9(grid: grid)
+//        } else if currentLevel == 10 {
+//            Levels.level10(grid: grid)
+//        }
     }
 
     override func didMove(to: SKView) {
@@ -59,6 +61,9 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
             grid.position = CGPoint (x:frame.midX, y:frame.midY)
             grid.name = "grid"
             addChild(grid)
+            let label = LabelNode(message: "Level: \(GameScene.currentLevel) ")
+            label.position = CGPoint (x:1100, y:1900)
+            addChild(label)
             // add levels to the scene
             GameScene.loadLevel(grid: grid)
             // loop for all the childnodes // didMoveTOScene implemented in other class
