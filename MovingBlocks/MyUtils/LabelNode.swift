@@ -8,17 +8,17 @@
 
 import SpriteKit
 class LabelNode: SKLabelNode  {
-    convenience init(message: String) {
+    convenience init(message: String, size: CGFloat = 120) {
         self.init(fontNamed: "MarkerFelt-Thin")
         text = message
-        fontSize = 120.0
+        fontSize = size
         fontColor = SKColor.white
         zPosition = 100
-        let front = SKLabelNode(fontNamed: "MarkerFelt-Thin")
-        front.text = message
-        front.fontSize = 120.0
-        front.fontColor = SKColor.purple
-        front.position = CGPoint(x: -2, y: -2)
-        addChild(front)
+//        let front = SKLabelNode(fontNamed: "MarkerFelt-Thin")
+//        front.text = message
+//        front.fontSize = size
+//        front.fontColor = SKColor.purple
+//        front.position = CGPoint(x: -2, y: -2)
+//        addChild(front)
 }
 }
