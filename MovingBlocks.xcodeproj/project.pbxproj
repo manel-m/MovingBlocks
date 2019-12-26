@@ -46,6 +46,9 @@
 		9980972123B4217A00C88848 /* LevelsSelector3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9980972023B4217A00C88848 /* LevelsSelector3.sks */; };
 		9980972323B4250200C88848 /* NextLevelButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9980972223B4250200C88848 /* NextLevelButton2.swift */; };
 		9980972523B4255800C88848 /* PrevLevelButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9980972423B4255800C88848 /* PrevLevelButton2.swift */; };
+		9980972723B4389E00C88848 /* LevelsSelector4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9980972623B4389E00C88848 /* LevelsSelector4.sks */; };
+		9980972923B43A9100C88848 /* PrevLevelButton3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9980972823B43A9100C88848 /* PrevLevelButton3.swift */; };
+		9980972B23B43B2700C88848 /* NextLevelButton3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9980972A23B43B2700C88848 /* NextLevelButton3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +93,9 @@
 		9980972023B4217A00C88848 /* LevelsSelector3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelsSelector3.sks; sourceTree = "<group>"; };
 		9980972223B4250200C88848 /* NextLevelButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLevelButton2.swift; sourceTree = "<group>"; };
 		9980972423B4255800C88848 /* PrevLevelButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevLevelButton2.swift; sourceTree = "<group>"; };
+		9980972623B4389E00C88848 /* LevelsSelector4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelsSelector4.sks; sourceTree = "<group>"; };
+		9980972823B43A9100C88848 /* PrevLevelButton3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevLevelButton3.swift; sourceTree = "<group>"; };
+		9980972A23B43B2700C88848 /* NextLevelButton3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLevelButton3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,7 @@
 				9926019D23AB39C10061FF15 /* LevelsSelector.sks */,
 				9980971A23B1A4C400C88848 /* LevelsSelector2.sks */,
 				9980972023B4217A00C88848 /* LevelsSelector3.sks */,
+				9980972623B4389E00C88848 /* LevelsSelector4.sks */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -180,7 +187,9 @@
 				9980971C23B1A85900C88848 /* NextLevelButton.swift */,
 				9980971E23B1A9E800C88848 /* PrevLevelButton.swift */,
 				9980972223B4250200C88848 /* NextLevelButton2.swift */,
+				9980972A23B43B2700C88848 /* NextLevelButton3.swift */,
 				9980972423B4255800C88848 /* PrevLevelButton2.swift */,
+				9980972823B43A9100C88848 /* PrevLevelButton3.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -258,6 +267,7 @@
 			files = (
 				995D57E72369518A00D1FE73 /* backgroundMusic.mp3 in Resources */,
 				9905DCED233D6BE90032C53D /* Main.storyboard in Resources */,
+				9980972723B4389E00C88848 /* LevelsSelector4.sks in Resources */,
 				9980972123B4217A00C88848 /* LevelsSelector3.sks in Resources */,
 				9958522623A9E9870031C671 /* Home.sks in Resources */,
 				9926019E23AB39C10061FF15 /* LevelsSelector.sks in Resources */,
@@ -281,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9980972923B43A9100C88848 /* PrevLevelButton3.swift in Sources */,
 				992601A223AC5A160061FF15 /* LabelNode.swift in Sources */,
 				9926019423AB03E30061FF15 /* HomeButton.swift in Sources */,
 				9926019A23AB35220061FF15 /* LevelsScene.swift in Sources */,
@@ -291,6 +302,7 @@
 				9905DCFC234ED5220032C53D /* BlockNode.swift in Sources */,
 				995D57D623691FA800D1FE73 /* SKAction+Extensions.swift in Sources */,
 				995D57ED23713FFC00D1FE73 /* PlayButton.swift in Sources */,
+				9980972B23B43B2700C88848 /* NextLevelButton3.swift in Sources */,
 				995D57E92369529A00D1FE73 /* SKTAudio.swift in Sources */,
 				9926019023AAB1CA0061FF15 /* Homescene.swift in Sources */,
 				992601A023AC55BB0061FF15 /* SelectLevelButton.swift in Sources */,
