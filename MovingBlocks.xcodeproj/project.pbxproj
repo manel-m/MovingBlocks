@@ -49,6 +49,9 @@
 		9980972723B4389E00C88848 /* LevelsSelector4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9980972623B4389E00C88848 /* LevelsSelector4.sks */; };
 		9980972923B43A9100C88848 /* PrevLevelButton3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9980972823B43A9100C88848 /* PrevLevelButton3.swift */; };
 		9980972B23B43B2700C88848 /* NextLevelButton3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9980972A23B43B2700C88848 /* NextLevelButton3.swift */; };
+		9980972D23B44F9800C88848 /* LevelsSelector5.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9980972C23B44F9800C88848 /* LevelsSelector5.sks */; };
+		9980972F23B450F300C88848 /* PrevLevelButton4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9980972E23B450F300C88848 /* PrevLevelButton4.swift */; };
+		9980973123B4516F00C88848 /* NextLevelButton4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9980973023B4516F00C88848 /* NextLevelButton4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +99,9 @@
 		9980972623B4389E00C88848 /* LevelsSelector4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelsSelector4.sks; sourceTree = "<group>"; };
 		9980972823B43A9100C88848 /* PrevLevelButton3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevLevelButton3.swift; sourceTree = "<group>"; };
 		9980972A23B43B2700C88848 /* NextLevelButton3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLevelButton3.swift; sourceTree = "<group>"; };
+		9980972C23B44F9800C88848 /* LevelsSelector5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelsSelector5.sks; sourceTree = "<group>"; };
+		9980972E23B450F300C88848 /* PrevLevelButton4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevLevelButton4.swift; sourceTree = "<group>"; };
+		9980973023B4516F00C88848 /* NextLevelButton4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLevelButton4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,7 @@
 				9980971A23B1A4C400C88848 /* LevelsSelector2.sks */,
 				9980972023B4217A00C88848 /* LevelsSelector3.sks */,
 				9980972623B4389E00C88848 /* LevelsSelector4.sks */,
+				9980972C23B44F9800C88848 /* LevelsSelector5.sks */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -188,8 +195,10 @@
 				9980971E23B1A9E800C88848 /* PrevLevelButton.swift */,
 				9980972223B4250200C88848 /* NextLevelButton2.swift */,
 				9980972A23B43B2700C88848 /* NextLevelButton3.swift */,
+				9980973023B4516F00C88848 /* NextLevelButton4.swift */,
 				9980972423B4255800C88848 /* PrevLevelButton2.swift */,
 				9980972823B43A9100C88848 /* PrevLevelButton3.swift */,
+				9980972E23B450F300C88848 /* PrevLevelButton4.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -273,6 +282,7 @@
 				9926019E23AB39C10061FF15 /* LevelsSelector.sks in Resources */,
 				9905DCE4233D6BE80032C53D /* GameScene.sks in Resources */,
 				9905DCEF233D6BF20032C53D /* Assets.xcassets in Resources */,
+				9980972D23B44F9800C88848 /* LevelsSelector5.sks in Resources */,
 				995D57E123694DE600D1FE73 /* hitCat.wav in Resources */,
 				995D57E023694DE600D1FE73 /* lose.wav in Resources */,
 				9980971B23B1A4C400C88848 /* LevelsSelector2.sks in Resources */,
@@ -315,6 +325,8 @@
 				9905DCFA23430F150032C53D /* Grid.swift in Sources */,
 				9980972523B4255800C88848 /* PrevLevelButton2.swift in Sources */,
 				9926019223AAB4B80061FF15 /* SoundButton.swift in Sources */,
+				9980973123B4516F00C88848 /* NextLevelButton4.swift in Sources */,
+				9980972F23B450F300C88848 /* PrevLevelButton4.swift in Sources */,
 				995D57D223625D5700D1FE73 /* Cell.swift in Sources */,
 				9980972323B4250200C88848 /* NextLevelButton2.swift in Sources */,
 			);
