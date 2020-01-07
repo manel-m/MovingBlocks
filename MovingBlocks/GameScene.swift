@@ -57,13 +57,14 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
 
     override func didMove(to: SKView) {
         // add grid to the scene (in case nul : if let)
-        if let grid = Grid(blockSize: 200.0, rows:5, cols:5, delegate: self) {
+        if let grid = Grid(blockSize: 185.0, rows:5, cols:5, delegate: self) {
             grid.position = CGPoint (x:frame.midX, y:frame.midY)
             grid.name = "grid"
             addChild(grid)
-            let label = LabelNode(message: "Level: \(GameScene.currentLevel) ")
-            label.position = CGPoint (x:1100, y:1900)
+            let label = LabelNode(message: "Level: \(GameScene.currentLevel) / 100")
+            label.position = CGPoint (x:760, y:1850)
             addChild(label)
+            
             // add levels to the scene
             GameScene.loadLevel(grid: grid)
             // loop for all the childnodes // didMoveTOScene implemented in other class
@@ -77,13 +78,14 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
         // Calculate playable margin
         let maxAspectRatio: CGFloat = 16.0/9.0
         let maxAspectRatioHeight = size.width / maxAspectRatio
-        let playableMargin: CGFloat = (size.height
-            - maxAspectRatioHeight)/2
+        let playableMargin: CGFloat = (size.height - maxAspectRatioHeight)/2
         let playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: size.height-playableMargin*2)
+        
         // physics for label "Nice job"
         physicsBody = SKPhysicsBody(edgeLoopFrom: playableRect)
         physicsWorld.contactDelegate = self
         physicsBody!.categoryBitMask = PhysicsCategory.Edge
+        
         // add Background Music
         if !MusicButton.musicPaused {
      SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
