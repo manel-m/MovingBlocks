@@ -10,8 +10,12 @@
 import SpriteKit
 
 class BlockNode: SKSpriteNode , EventListenerNode {
+    
+    var beforeDrag: CGPoint = CGPoint();
+    
     // call it in Gamescene.didMove
     func didMoveToScene() {
+        zPosition = 1
         if name != "black" {
             isUserInteractionEnabled = true
         }
@@ -20,17 +24,31 @@ class BlockNode: SKSpriteNode , EventListenerNode {
     // sritekit will call this method when player touchs block
     override func touchesBegan(_ touches: Set<UITouch>,
                                with event: UIEvent?) {
-        print("block touches began")
-        // check if it's the first touch
-        guard let touch = touches.first else {
-            return
+        if let touch = touches.first {
+            // drag started, save current block position
+            beforeDrag = position;
+            let touchLocation = touch.location(in: GameScene.grid)
+            // set node position to current touch position
+            position = touchLocation;
+            zPosition = 2
         }
-        let touchLocation = touch.location(in: self)
-        sceneTouched(touchLocation: touchLocation)
     }
- // keep reference to the touched block to find it when player touches the scene
-    func sceneTouched(touchLocation:CGPoint) {
-        print("block scene touched")
-        GameScene.block = self
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            // move block with touch location
+            let touchLocation = touch.location(in: GameScene.grid)
+            position = touchLocation;
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if touches.first != nil {
+            // drag ended, block should be over target grid cell
+            if !GameScene.grid.moveBlock(block: self) {
+                position = beforeDrag
+            }
+            zPosition = 1
+        }
     }
 }

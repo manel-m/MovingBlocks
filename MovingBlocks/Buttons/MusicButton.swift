@@ -10,24 +10,26 @@ import Foundation
 import SpriteKit
 class MusicButton : SKSpriteNode {
     static var musicPaused = false
+
+    let musicOnTexture = SKTexture(imageNamed: "btn-music")
+    let musicOffTexture = SKTexture(imageNamed: "btn-music-off")
+
     // initialize playButton
     // we need constructor to enable user interaction
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         isUserInteractionEnabled = true
+        self.texture = MusicButton.musicPaused ? musicOffTexture : musicOnTexture
     }
     
     override func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?) {
-        let texture1 = SKTexture(imageNamed: "btn-music")
-        let texture2 = SKTexture(imageNamed: "btn-music-off")
         if MusicButton.musicPaused {
             SKTAudio.sharedInstance().resumeBackgroundMusic()
-            self.texture = texture1
             MusicButton.musicPaused = false
         } else {
             SKTAudio.sharedInstance().pauseBackgroundMusic()
-            self.texture = texture2
             MusicButton.musicPaused = true
         }
-}
+        self.texture = MusicButton.musicPaused ? musicOffTexture : musicOnTexture
+    }
 }

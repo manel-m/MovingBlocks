@@ -81,24 +81,19 @@ class Grid:SKSpriteNode {
         return Cell(row:row, col:col)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
-            return
-        }
-        let touchLocation = touch.location(in: self)
-        sceneTouched(touchLocation: touchLocation)
-    }
-    
-    func sceneTouched(touchLocation:CGPoint) {
-        // convert touchLocation to cell(row, col) named: C
-        let c = toRowCol(location:touchLocation)
-        // if GameScene.block Named b is empty, put touchLocation named C on it
-        if let b = GameScene.block {
-            GameScene.block = nil
-            b.position = gridPosition(cell:c)
+    func moveBlock(block: BlockNode) -> Bool {
+        let c = toRowCol(location: block.position)
+        // first check if cell is empty or not
+        if findBlock(cell: c) == nil {
+            block.position = gridPosition(cell: c)
             // call win condition function
             checkWinCondition()
+            
+            return true
         }
+        
+        // cell is not empty
+        return false
     }
     
     func checkWinCondition() {

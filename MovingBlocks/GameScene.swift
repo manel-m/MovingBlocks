@@ -23,7 +23,7 @@ struct PhysicsCategory {
 
 class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
     
-    static var block: BlockNode! // reference of last touched block
+    static var grid: Grid! // reference of level grid
     static var currentLevel: Int = 1
 
     var lastTouchLocation : CGPoint?
@@ -58,10 +58,12 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
     override func didMove(to: SKView) {
         // add grid to the scene (in case nul : if let)
         if let grid = Grid(blockSize: 185.0, rows:5, cols:5, delegate: self) {
+            GameScene.grid = grid
+
             grid.position = CGPoint (x:frame.midX, y:frame.midY)
             grid.name = "grid"
             addChild(grid)
-            let label = LabelNode(message: "Level: \(GameScene.currentLevel) / 100")
+            let label = LabelNode(message: "\(GameScene.currentLevel) / 100")
             label.position = CGPoint (x:760, y:1850)
             addChild(label)
             

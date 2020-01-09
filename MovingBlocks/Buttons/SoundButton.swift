@@ -10,25 +10,26 @@ import Foundation
 import SpriteKit
 class SoundButton : SKSpriteNode {
     static var SoundPaused = false
+
+    let soundOnTexture = SKTexture(imageNamed: "btn-sound")
+    let soundOffTexture = SKTexture(imageNamed: "btn-sound-off")
+
     // initialize playButton
     // we need constructor to enable user interaction
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         isUserInteractionEnabled = true
+        texture = SoundButton.SoundPaused ? soundOffTexture : soundOnTexture
     }
     
     override func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?) {
-        let texture1 = SKTexture(imageNamed: "btn-sound")
-        let texture2 = SKTexture(imageNamed: "btn-sound-off")
         if SoundButton.SoundPaused {
-            self.texture = texture1
             SoundButton.SoundPaused = false
-            print("sound off")
+//            print("sound off")
         } else {
-            //SKTAudio.sharedInstance().playSoundEffect("win.wav")
-            self.texture = texture2
             SoundButton.SoundPaused = true
-            print("sound on")
+//            print("sound on")
         }
+        texture = SoundButton.SoundPaused ? soundOffTexture : soundOnTexture
     }
 }
