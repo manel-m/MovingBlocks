@@ -83,6 +83,11 @@ class Grid:SKSpriteNode {
     
     func moveBlock(block: BlockNode) -> Bool {
         let c = toRowCol(location: block.position)
+        // first make sure the cell is inside the grid
+        if c.row < 0 || c.row >= rows || c.col < 0 || c.col >= cols {
+            return false
+        }
+        
         // first check if cell is empty or not
         if findBlock(cell: c) == nil {
             block.position = gridPosition(cell: c)
