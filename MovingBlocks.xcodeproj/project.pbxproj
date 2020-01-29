@@ -55,7 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9905DCDE233D6BE80032C53D /* MovingBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovingBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9905DCDE233D6BE80032C53D /* FrenzyBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrenzyBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9905DCE1233D6BE80032C53D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9905DCE3233D6BE80032C53D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		9905DCE5233D6BE80032C53D /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		9905DCDF233D6BE80032C53D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9905DCDE233D6BE80032C53D /* MovingBlocks.app */,
+				9905DCDE233D6BE80032C53D /* FrenzyBlocks.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,7 +233,7 @@
 			);
 			name = MovingBlocks;
 			productName = MovingBlocks;
-			productReference = 9905DCDE233D6BE80032C53D /* MovingBlocks.app */;
+			productReference = 9905DCDE233D6BE80032C53D /* FrenzyBlocks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -481,8 +481,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.matougui.m.MovingBlocks;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.matougui.m.FrenzyBlocks;
+				PRODUCT_NAME = FrenzyBlocks;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -499,8 +499,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.matougui.m.MovingBlocks;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.matougui.m.FrenzyBlocks;
+				PRODUCT_NAME = FrenzyBlocks;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

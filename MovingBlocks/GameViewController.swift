@@ -24,8 +24,8 @@ class GameViewController: UIViewController {
             }
             view.ignoresSiblingOrder = false // LATER: check this paramater
             // show this parameter in scene game //LATER: turn them off
-            view.showsFPS = true
-            view.showsNodeCount = true
+            view.showsFPS = false
+            view.showsNodeCount = false
         }
     }
    

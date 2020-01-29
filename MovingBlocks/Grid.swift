@@ -160,6 +160,9 @@ class Grid:SKSpriteNode {
     }
     // add blocks in the gird 
     func addBlock(row:Int, col:Int, color:String) {
+        // color == "1" => imageNamed = "1-1", name = "1"
+        // color == "2" => imageNamed = "2-2"
+        // color == ? => imageNamed = "\(color)-\(color)"
         let gamePiece = BlockNode (imageNamed: "block-color-\(color)")
         gamePiece.position = gridPosition(cell: Cell(row:row, col:col))
         gamePiece.name = color

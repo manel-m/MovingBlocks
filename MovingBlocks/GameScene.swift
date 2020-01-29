@@ -31,28 +31,6 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
     static func loadLevel(grid: Grid) {
         let levelStr = Levels.levels[currentLevel-1]
         Levels.loadLevel(grid: grid, str: levelStr)
-//        if currentLevel == 1 {
-//            Levels.level1(grid: grid)
-//        } else if currentLevel == 2 {
-//            Levels.level2(grid: grid)
-//        } else if currentLevel == 3 {
-//            Levels.level3(grid: grid)
-//        } else if currentLevel == 4 {
-//            Levels.level4(grid: grid)
-//        }
-//        else if currentLevel == 5 {
-//            Levels.level5(grid: grid)
-//        } else if currentLevel == 6 {
-//            Levels.level6(grid: grid)
-//        } else if currentLevel == 7 {
-//            Levels.level7(grid: grid)
-//        } else if currentLevel == 8 {
-//            Levels.level8(grid: grid)
-//        } else if currentLevel == 9 {
-//            Levels.level9(grid: grid)
-//        } else if currentLevel == 10 {
-//            Levels.level10(grid: grid)
-//        }
     }
 
     override func didMove(to: SKView) {
