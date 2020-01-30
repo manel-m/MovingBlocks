@@ -56,6 +56,7 @@
 		99C7209F23E221A30030942C /* CreditsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7209E23E221A30030942C /* CreditsButton.swift */; };
 		99C720A123E223BF0030942C /* WinScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 99C720A023E223BF0030942C /* WinScene.sks */; };
 		99C720A323E227F30030942C /* WinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C720A223E227F30030942C /* WinScene.swift */; };
+		99C720A523E37FB90030942C /* RetryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C720A423E37FB90030942C /* RetryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		99C7209E23E221A30030942C /* CreditsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsButton.swift; sourceTree = "<group>"; };
 		99C720A023E223BF0030942C /* WinScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WinScene.sks; sourceTree = "<group>"; };
 		99C720A223E227F30030942C /* WinScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinScene.swift; sourceTree = "<group>"; };
+		99C720A423E37FB90030942C /* RetryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				9980972823B43A9100C88848 /* PrevLevelButton3.swift */,
 				9980972E23B450F300C88848 /* PrevLevelButton4.swift */,
 				99C7209E23E221A30030942C /* CreditsButton.swift */,
+				99C720A423E37FB90030942C /* RetryButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				9980972523B4255800C88848 /* PrevLevelButton2.swift in Sources */,
 				9926019223AAB4B80061FF15 /* SoundButton.swift in Sources */,
 				9980973123B4516F00C88848 /* NextLevelButton4.swift in Sources */,
+				99C720A523E37FB90030942C /* RetryButton.swift in Sources */,
 				9980972F23B450F300C88848 /* PrevLevelButton4.swift in Sources */,
 				995D57D223625D5700D1FE73 /* Cell.swift in Sources */,
 				9980972323B4250200C88848 /* NextLevelButton2.swift in Sources */,
