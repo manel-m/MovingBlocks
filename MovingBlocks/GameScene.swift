@@ -75,13 +75,24 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
     
     // if the player win
     func gameWon() {
-        run(SKAction.afterDelay(3, runBlock: newGame)) // show the next level after 3 seconds
-        inGameMessage(text: "Nice job!")// show win label
-        // pause and add play Sound Effect
-        if !SoundButton.SoundPaused {
-            SKTAudio.sharedInstance().pauseBackgroundMusic()
-            SKTAudio.sharedInstance().playSoundEffect("win.wav")
+ 
+        if GameScene.currentLevel == 2 {
+            if let scene = SKScene(fileNamed: "WinScene") {
+            // Set the scale mode to scale to fit the window
+                scene.scaleMode = .aspectFill
+                // Present the scene
+                view!.presentScene(scene)
+            }
+        } else {
+            run(SKAction.afterDelay(3, runBlock: newGame)) // show the next level after 3 seconds
+             inGameMessage(text: "Nice job!")// show win label
+             // pause and add play Sound Effect
+             if !SoundButton.SoundPaused {
+                 SKTAudio.sharedInstance().pauseBackgroundMusic()
+                 SKTAudio.sharedInstance().playSoundEffect("win.wav")
+             }
         }
+       
     }
     // show next level
     func newGame() {
