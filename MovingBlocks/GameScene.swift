@@ -33,7 +33,7 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
         let levelStr = Levels.levels[currentLevel-1]
         Levels.loadLevel(grid: grid, str: levelStr)
     }
-
+    
     override func didMove(to: SKView) {
         // add grid to the scene (in case nul : if let)
         if let grid = Grid(blockSize: 185.0, rows:5, cols:5, delegate: self) {
@@ -90,16 +90,20 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
 
     }
     
+    func saveScene() {
+        UserDefaults.standard.set(Levels.lastUnlocked, forKey: "lastUnlocked")
+    }
+    
     func newGame() {
         if !MusicButton.musicPaused {
             SKTAudio.sharedInstance().resumeBackgroundMusic()
         }
         
         GameScene.currentLevel += 1
-        Levels.lastUnlocked = max(Levels.lastUnlocked, GameScene.currentLevel)
-
+        Levels.updateLastUnlocked(currentLevel: GameScene.currentLevel)
+        
         var game: SKScene?
-        if GameScene.currentLevel == 5/*Levels.levels.count+1 */ {
+        if GameScene.currentLevel == Levels.levels.count+1  {
             game = SKScene(fileNamed: "WinScene")
         } else {
             game = SKScene(fileNamed: "GameScene")

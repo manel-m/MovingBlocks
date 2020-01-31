@@ -23,7 +23,8 @@ class PlayButton : SKSpriteNode {
     
     // start a new level
     func newGame() {
-        GameScene.currentLevel = 1
+        GameScene.currentLevel = min(Levels.lastUnlocked, Levels.levels.count)
+        
         if let game = SKScene(fileNamed: "GameScene") {
             // Set the scale mode to scale to fit the window
             game.scaleMode = .aspectFill
