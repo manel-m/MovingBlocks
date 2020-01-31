@@ -75,29 +75,30 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
     
     // if the player win
     func gameWon() {
- 
-        if GameScene.currentLevel == 2 {
-            if let scene = SKScene(fileNamed: "WinScene") {
-            // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                // Present the scene
-                view!.presentScene(scene)
-            }
-        } else {
-            run(SKAction.afterDelay(3, runBlock: newGame)) // show the next level after 3 seconds
-             inGameMessage(text: "Nice job!")// show win label
-             // pause and add play Sound Effect
-             if !SoundButton.SoundPaused {
-                 SKTAudio.sharedInstance().pauseBackgroundMusic()
-                 SKTAudio.sharedInstance().playSoundEffect("win.wav")
-             }
+        run(SKAction.afterDelay(3, runBlock: newGame)) // show the next level after 3 seconds
+        inGameMessage(text: "Nice Job!")// show win label
+        // pause and add play Sound Effect
+        if !MusicButton.musicPaused {
+            SKTAudio.sharedInstance().pauseBackgroundMusic()
+            SKTAudio.sharedInstance().playSoundEffect("win.wav")
         }
-       
     }
-    // show next level
+    
     func newGame() {
+        if !MusicButton.musicPaused {
+            SKTAudio.sharedInstance().resumeBackgroundMusic()
+        }
         GameScene.currentLevel += 1
-        if let scene = SKScene(fileNamed: "GameScene") {
+        Levels.lastUnlocked = max(Levels.lastUnlocked, GameScene.currentLevel)
+
+        var game: SKScene?
+        if GameScene.currentLevel == 5/*Levels.levels.count+1 */ {
+            game = SKScene(fileNamed: "WinScene")
+        } else {
+            game = SKScene(fileNamed: "GameScene")
+        }
+        
+        if let scene = game {
             // Set the scale mode to scale to fit the window
             scene.scaleMode = .aspectFill
             // Present the scene

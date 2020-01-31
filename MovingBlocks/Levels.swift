@@ -16,9 +16,9 @@ class Levels {
     static let levels: [String] = [
        "_________B__B____________",
        "__OBB__O_________________",
-//       "_FFY____G____Y__G_____F___",
-//        "YBG____Y_BG_G_________YYG",
-//       "FFF___FYBB_Y__B_Y_BB___BY",
+       "_FFY____G____Y__G_____F___",
+        "YBG____Y_BG_G_________YYG",
+       "FFF___FYBB_Y__B_Y_BB___BY",
 //       "FFO__FF___FFOO__GWOO_OWG_",
 //       "__Y__OWO_GWY___W_G__W__OG",
 //        "_RB_OR_ROB_R_OB___RO___OR",
@@ -116,6 +116,7 @@ class Levels {
 //           "B__ORBRO_R__BGG_G_B_BGBRG",/////66
     ]
 
+    static var lastUnlocked: Int = 1
     static func loadLevel(grid:Grid, str: String) {
         let chars = Array(str)
         var idx = 0
