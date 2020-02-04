@@ -43,8 +43,16 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
             grid.name = "grid"
             addChild(grid)
             let label = LabelNode(message: "\(GameScene.currentLevel) / 100")
-            label.position = CGPoint (x:760, y:1850)
+            label.position = CGPoint (x:0, y:2000)
             addChild(label)
+            label.run(SKAction.sequence([SKAction.moveTo(x: 768.0, duration: 0.3), SKAction.moveTo(y: 1850, duration: 0.3)]))
+            
+            let label1 = LabelNode(message: "\(GameScene.currentLevel) / 100")
+            label1.position = CGPoint (x:1586, y:2000)
+            addChild(label1)
+            label1.run(SKAction.sequence([SKAction.moveTo(x: 768.0, duration: 0.3), SKAction.moveTo(y: 1850, duration: 0.3)]))
+
+            
             
             // add levels to the scene
             GameScene.loadLevel(grid: grid)
@@ -79,6 +87,15 @@ class GameScene: SKScene, WinCallback , SKPhysicsContactDelegate {
     func gameWon() {
         GameScene.canMove = false
         run(SKAction.afterDelay(3, runBlock: newGame)) // show the next level after 3 seconds
+
+        
+        enumerateChildNodes(withName: "//*", using: { node, _ in
+            if let block = node as? BlockNode {
+                let scaleUp = SKAction.scale(by: 1.5, duration: 0.25)
+                let scaleDown = scaleUp.reversed()
+                block.run(SKAction.sequence([scaleUp, scaleDown]))
+            }
+        })
         inGameMessage(text: "Nice Job!")// show win label
         // pause and add play Sound Effect
        if !SoundButton.SoundPaused {
